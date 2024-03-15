@@ -3,25 +3,50 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Screen2() {
   return (
     <main className="py-4">
       <header className="container mx-auto px-4 mb-20">
         <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
-          <img src="/icons/home.png" />
+          <span>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_184_850)">
+                <path
+                  d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+                  fill="#323232"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_184_850">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </span>
           <span>Back</span>
         </button>
       </header>
 
-      <div className="container mx-auto px-4">
-        <h1 className="text-center text-5xl font-pt-serif">
-          Describe Assessment
+      <div className="w-full md:w-4/5 lg:w-3/5 xl:w-3/6  mx-auto px-4">
+      <div className="logo flex justify-center my-6">
+          <img src="logo.png" width={64} height={64} />
+        </div>
+
+        <h1 className="text-center text-6xl font-pt-serif font-semibold">
+          AI Generated Assessment
         </h1>
-        <p className="text-center mt-3 font-raleway">
-          Describe your assessment in detail
+        <p className="text-center text-xl mt-3 font-raleway">
+          Ask anything, get your Assessment
         </p>
 
         <div className="flex justify-center mt-5">
+          <div className=""></div>
           <svg
             width="20"
             height="20"
@@ -92,149 +117,178 @@ export default function Home() {
             </defs>
           </svg>
         </div>
-      </div>
 
-      <div className="w-2/4 mx-auto my-10 flex flex-col gap-5">
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
+        <div className="flex flex-col gap-5 mt-10">
+          <div className="flex bg-white items-center gap-10 rounded-md">
+            <div>
+              <svg
+                width="100%"
+                height="110"
+                viewBox="0 0 309 110"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_125_930)">
-                    <path
-                      d="M20 3.5H19V1.5H17V3.5H7V1.5H5V3.5H4C2.9 3.5 2 4.4 2 5.5V21.5C2 22.6 2.9 23.5 4 23.5H20C21.1 23.5 22 22.6 22 21.5V5.5C22 4.4 21.1 3.5 20 3.5ZM20 21.5H4V10.5H20V21.5ZM20 8.5H4V5.5H20V8.5Z"
-                      fill="black"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_930">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Year Level"
-              autoComplete="off"
-            />
+                <path
+                  d="M0 14C0 6.26801 6.26801 0 14 0H309V110H14C6.26802 110 0 103.732 0 96V14Z"
+                  fill="#CBFFFE"
+                />
+                <path
+                  d="M245.473 28.671C213.179 11.4695 69.0354 27.1708 1 37.1717V57.6736C23.5521 60.6739 87.873 70.3747 164.74 85.176C260.823 103.678 285.839 50.1729 245.473 28.671Z"
+                  fill="#AAF2F1"
+                />
+                <rect
+                  x="66"
+                  y="19"
+                  width="169"
+                  height="70"
+                  rx="5"
+                  fill="white"
+                />
+                <rect
+                  x="85"
+                  y="32"
+                  width="130"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="85"
+                  y="48"
+                  width="67"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="148"
+                  y="64"
+                  width="67"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="158"
+                  y="48"
+                  width="57"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="85"
+                  y="64"
+                  width="57"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <path
+                  d="M255.062 22.5345C255.384 21.6639 256.616 21.6639 256.938 22.5345L260.162 31.2473C260.263 31.521 260.479 31.7368 260.753 31.8381L269.465 35.0621C270.336 35.3843 270.336 36.6157 269.465 36.9379L260.753 40.1619C260.479 40.2632 260.263 40.479 260.162 40.7527L256.938 49.4655C256.616 50.3361 255.384 50.3361 255.062 49.4655L251.838 40.7527C251.737 40.479 251.521 40.2632 251.247 40.1619L242.535 36.9379C241.664 36.6157 241.664 35.3843 242.535 35.0621L251.247 31.8381C251.521 31.7368 251.737 31.521 251.838 31.2473L255.062 22.5345Z"
+                  fill="#84BEBD"
+                />
+                <path
+                  d="M275.562 24.5345C275.884 23.6639 277.116 23.6639 277.438 24.5345L278.906 28.5029C279.008 28.7766 279.223 28.9924 279.497 29.0937L283.465 30.5621C284.336 30.8843 284.336 32.1157 283.465 32.4379L279.497 33.9063C279.223 34.0076 279.008 34.2234 278.906 34.4971L277.438 38.4655C277.116 39.3361 275.884 39.3361 275.562 38.4655L274.094 34.4971C273.992 34.2234 273.777 34.0076 273.503 33.9063L269.535 32.4379C268.664 32.1157 268.664 30.8843 269.535 30.5621L273.503 29.0937C273.777 28.9924 273.992 28.7766 274.094 28.5029L275.562 24.5345Z"
+                  fill="#84BEBD"
+                />
+                <path
+                  d="M271.062 13.5345C271.384 12.6639 272.616 12.6639 272.938 13.5345L274.271 17.1379C274.373 17.4117 274.588 17.6275 274.862 17.7288L278.465 19.0621C279.336 19.3843 279.336 20.6157 278.465 20.9379L274.862 22.2712C274.588 22.3725 274.373 22.5883 274.271 22.8621L272.938 26.4655C272.616 27.3361 271.384 27.3361 271.062 26.4655L269.729 22.8621C269.627 22.5883 269.412 22.3725 269.138 22.2712L265.535 20.9379C264.664 20.6157 264.664 19.3843 265.535 19.0621L269.138 17.7288C269.412 17.6275 269.627 17.4117 269.729 17.1379L271.062 13.5345Z"
+                  fill="#84BEBD"
+                />
+              </svg>
+            </div>
+            <div>
+              <p className="mb-2 text-lg">AI-Integrated Assessment</p>
+              <p className="text-gray-400">Upload any thing regarding</p>
+            </div>
+          </div>
+
+          <div className="flex bg-white items-center gap-10 rounded-md">
+            <div>
+              <svg
+                width="100%"
+                height="110"
+                viewBox="0 0 309 110"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 14C0 6.26801 6.26801 0 14 0H309V110H14C6.26802 110 0 103.732 0 96V14Z"
+                  fill="#CBFFFE"
+                />
+                <path
+                  d="M245.473 28.671C213.179 11.4695 69.0354 27.1708 1 37.1717V57.6736C23.5521 60.6739 87.873 70.3747 164.74 85.176C260.823 103.678 285.839 50.1729 245.473 28.671Z"
+                  fill="#AAF2F1"
+                />
+                <rect
+                  x="66"
+                  y="19"
+                  width="169"
+                  height="70"
+                  rx="5"
+                  fill="white"
+                />
+                <rect
+                  x="85"
+                  y="32"
+                  width="130"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="85"
+                  y="48"
+                  width="67"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="148"
+                  y="64"
+                  width="67"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="158"
+                  y="48"
+                  width="57"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <rect
+                  x="85"
+                  y="64"
+                  width="57"
+                  height="9"
+                  rx="4.5"
+                  fill="#91FBF8"
+                />
+                <path
+                  d="M255.062 22.5345C255.384 21.6639 256.616 21.6639 256.938 22.5345L260.162 31.2473C260.263 31.521 260.479 31.7368 260.753 31.8381L269.465 35.0621C270.336 35.3843 270.336 36.6157 269.465 36.9379L260.753 40.1619C260.479 40.2632 260.263 40.479 260.162 40.7527L256.938 49.4655C256.616 50.3361 255.384 50.3361 255.062 49.4655L251.838 40.7527C251.737 40.479 251.521 40.2632 251.247 40.1619L242.535 36.9379C241.664 36.6157 241.664 35.3843 242.535 35.0621L251.247 31.8381C251.521 31.7368 251.737 31.521 251.838 31.2473L255.062 22.5345Z"
+                  fill="#84BEBD"
+                />
+                <path
+                  d="M275.562 24.5345C275.884 23.6639 277.116 23.6639 277.438 24.5345L278.906 28.5029C279.008 28.7766 279.223 28.9924 279.497 29.0937L283.465 30.5621C284.336 30.8843 284.336 32.1157 283.465 32.4379L279.497 33.9063C279.223 34.0076 279.008 34.2234 278.906 34.4971L277.438 38.4655C277.116 39.3361 275.884 39.3361 275.562 38.4655L274.094 34.4971C273.992 34.2234 273.777 34.0076 273.503 33.9063L269.535 32.4379C268.664 32.1157 268.664 30.8843 269.535 30.5621L273.503 29.0937C273.777 28.9924 273.992 28.7766 274.094 28.5029L275.562 24.5345Z"
+                  fill="#84BEBD"
+                />
+                <path
+                  d="M271.062 13.5345C271.384 12.6639 272.616 12.6639 272.938 13.5345L274.271 17.1379C274.373 17.4117 274.588 17.6275 274.862 17.7288L278.465 19.0621C279.336 19.3843 279.336 20.6157 278.465 20.9379L274.862 22.2712C274.588 22.3725 274.373 22.5883 274.271 22.8621L272.938 26.4655C272.616 27.3361 271.384 27.3361 271.062 26.4655L269.729 22.8621C269.627 22.5883 269.412 22.3725 269.138 22.2712L265.535 20.9379C264.664 20.6157 264.664 19.3843 265.535 19.0621L269.138 17.7288C269.412 17.6275 269.627 17.4117 269.729 17.1379L271.062 13.5345Z"
+                  fill="#84BEBD"
+                />
+              </svg>
+            </div>
+            <div>
+              <p className="mb-2 text-lg">AI-Integrated Assessment</p>
+              <p className="text-gray-400">Upload any thing regarding</p>
+            </div>
           </div>
         </div>
-
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_125_933)">
-                    <path
-                      d="M17 1.5H7C5.9 1.5 5 2.4 5 3.5V21.5C5 22.6 5.9 23.5 7 23.5H17C18.1 23.5 19 22.6 19 21.5V3.5C19 2.4 18.1 1.5 17 1.5ZM17 19.5H7V5.5H17V19.5ZM8 6.5H16V8.5H8V6.5Z"
-                      fill="black"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_933">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Course / Unit"
-              autoComplete="off"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_125_939)">
-                    <path
-                      d="M21 5.5C19.89 5.15 18.67 5 17.5 5C15.55 5 13.45 5.4 12 6.5C10.55 5.4 8.45 5 6.5 5C4.55 5 2.45 5.4 1 6.5V21.15C1 21.4 1.25 21.65 1.5 21.65C1.6 21.65 1.65 21.6 1.75 21.6C3.1 20.95 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.8 22.25 21.55C22.35 21.6 22.4 21.6 22.5 21.6C22.75 21.6 23 21.35 23 21.1V6.5C22.4 6.05 21.75 5.75 21 5.5ZM21 19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V8.5C13.35 7.65 15.8 7 17.5 7C18.7 7 19.9 7.15 21 7.5V19Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M17.5 11C18.38 11 19.23 11.09 20 11.26V9.74C19.21 9.59 18.36 9.5 17.5 9.5C15.8 9.5 14.26 9.79 13 10.33V11.99C14.13 11.35 15.7 11 17.5 11Z"
-                      fill="#323232"
-                    />
-                    <path
-                      d="M13 12.99V14.65C14.13 14.01 15.7 13.66 17.5 13.66C18.38 13.66 19.23 13.75 20 13.92V12.4C19.21 12.25 18.36 12.16 17.5 12.16C15.8 12.16 14.26 12.46 13 12.99Z"
-                      fill="#323232"
-                    />
-                    <path
-                      d="M17.5 14.83C15.8 14.83 14.26 15.12 13 15.66V17.32C14.13 16.68 15.7 16.33 17.5 16.33C18.38 16.33 19.23 16.42 20 16.59V15.07C19.21 14.91 18.36 14.83 17.5 14.83Z"
-                      fill="#323232"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_939">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Learning Outcomes"
-              autoComplete="off"
-            />
-          </div>
-        </div>
-
-        <textarea placeholder="Describe Assessment" className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-5 focus:outline-none w-full"  rows={10}></textarea>
-        <button className="bg-[#CBFFFE] p-4 rounded-md text-center font-bold">Submit</button>
       </div>
 
       <div className="absolute bottom-0 right-10">
