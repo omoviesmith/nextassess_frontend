@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="py-4">
       <header className="container mx-auto px-4 mb-10">
-        <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
+        <button
+          className="py-4 px-8 bg-white flex gap-2 rounded-md"
+          onClick={() => router.push("/")}
+        >
           <span>
             <svg
               width="24"
@@ -35,7 +41,7 @@ export default function Home() {
 
       <div className="container mx-auto px-4">
         <h1 className="text-center text-5xl font-semibold font-pt-serif">
-          Programmatic Assessment
+          Describe Assessment
         </h1>
         <p className="text-center mt-3 font-raleway">
           Describe your assessment in detail
@@ -151,7 +157,7 @@ export default function Home() {
             <input
               type="text"
               className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Program / Course"
+              placeholder="Year Level"
               autoComplete="off"
             />
           </div>
@@ -165,32 +171,35 @@ export default function Home() {
                 className="p-1 focus:outline-none focus:shadow-outline"
               >
                 <svg
-                  width="14"
-                  height="20"
-                  viewBox="0 0 14 20"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M6.99983 0.5C6.53983 0.5 6.06983 0.54 5.59983 0.64C2.83983 1.17 0.639827 3.4 0.119827 6.16C-0.360173 8.77 0.599828 11.17 2.33983 12.72C2.76983 13.1 2.99983 13.63 2.99983 14.19V16.5C2.99983 17.6 3.89983 18.5 4.99983 18.5H5.27983C5.62983 19.1 6.25983 19.5 6.99983 19.5C7.73983 19.5 8.37983 19.1 8.71983 18.5H8.99983C10.0998 18.5 10.9998 17.6 10.9998 16.5V14.19C10.9998 13.64 11.2198 13.1 11.6398 12.73C13.0898 11.45 13.9998 9.58 13.9998 7.5C13.9998 3.63 10.8698 0.5 6.99983 0.5ZM8.99983 14.5H4.99983V13.5H8.99983V14.5ZM4.99983 16.5V15.5H8.99983V16.5H4.99983ZM10.3098 11.24C10.2198 11.32 10.1498 11.42 10.0698 11.5H3.91983C3.83983 11.41 3.76983 11.31 3.67983 11.23C2.35983 10.05 1.76983 8.29 2.08983 6.53C2.44983 4.59 4.04983 2.98 5.97983 2.6C6.31983 2.53 6.65983 2.5 6.99983 2.5C9.75983 2.5 11.9998 4.74 11.9998 7.5C11.9998 8.93 11.3898 10.29 10.3098 11.24Z"
-                    fill="black"
-                  />
-                  <path d="M7.5 8.5H6.5V11.5H7.5V8.5Z" fill="#323232" />
-                  <path
-                    d="M5.37946 6.37371L4.67236 7.08081L6.79366 9.20211L7.50076 8.49501L5.37946 6.37371Z"
-                    fill="#323232"
-                  />
-                  <path
-                    d="M6.50091 8.5053L7.20801 9.2124L9.32931 7.0911L8.62221 6.384L6.50091 8.5053Z"
-                    fill="#323232"
-                  />
+                  <g clip-path="url(#clip0_125_933)">
+                    <path
+                      d="M17 1.5H7C5.9 1.5 5 2.4 5 3.5V21.5C5 22.6 5.9 23.5 7 23.5H17C18.1 23.5 19 22.6 19 21.5V3.5C19 2.4 18.1 1.5 17 1.5ZM17 19.5H7V5.5H17V19.5ZM8 6.5H16V8.5H8V6.5Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_125_933">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
                 </svg>
               </button>
             </span>
             <input
               type="text"
               className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Assessment type preferences"
+              placeholder="Course / Unit"
               autoComplete="off"
             />
           </div>
@@ -241,36 +250,17 @@ export default function Home() {
                 </svg>
               </button>
             </span>
-            <select className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full form-select appearance-none bg-no-repeat">
-              <option disabled>Assessment type preferences</option>
-              <option>Both Assessment</option>
-              <option>AI-Integrated Assessment</option>
-              <option>Human Centric Assessment</option>
-            </select>
-            <span className="absolute inset-y-0 right-0 flex items-center pr-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="12"
-                  height="8"
-                  viewBox="0 0 12 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.41 0.590088L6 5.17009L10.59 0.590088L12 2.00009L6 8.00009L0 2.00009L1.41 0.590088Z"
-                    fill="#323232"
-                  />
-                </svg>
-              </button>
-            </span>
+            <input
+              type="text"
+              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
+              placeholder="Learning Outcomes"
+              autoComplete="off"
+            />
           </div>
         </div>
 
         <textarea
-          placeholder="Additional Note"
+          placeholder="Describe Assessment"
           className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-5 focus:outline-none w-full"
           rows={10}
         ></textarea>
@@ -279,7 +269,7 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="absolute bottom-0 right-10">
+      <div className="fixed bottom-0 right-10 -z-10">
         <svg
           width="485"
           height="418"

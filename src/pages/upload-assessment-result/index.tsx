@@ -643,7 +643,7 @@ const UploadAssessment9 = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 right-10">
+        <div className="fixed bottom-0 right-10 -z-10">
           <svg
             width="485"
             height="418"

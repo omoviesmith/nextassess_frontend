@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function UploadAssessment() {
+export default function Screen10() {
   const router = useRouter();
 
   return (
@@ -40,8 +40,8 @@ export default function UploadAssessment() {
       </header>
 
       <div className="container mx-auto px-4">
-        <h1 className="text-center font-bold text-6xl font-pt-serif">
-          Upload Assessment
+        <h1 className="text-center text-5xl font-pt-serif">
+          AI-Integrated Assessment
         </h1>
         <p className="text-center mt-3 font-raleway">
           Describe your assessment in detail
@@ -120,101 +120,13 @@ export default function UploadAssessment() {
         </div>
       </div>
 
-      <div className="w-3/4 md:w-2/4 mx-auto mt-10 flex flex-col gap-5">
-        <div className="border-dotted border-2 rounded-lg border-orange-400 bg-white py-20 mb-5">
-          <div className="flex flex-col gap-2 justify-center items-center ">
-            <div>
-              <svg
-                width="71"
-                height="71"
-                viewBox="0 0 71 71"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M57.2437 29.7016C55.2321 19.4953 46.2683 11.8333 35.5 11.8333C26.9504 11.8333 19.525 16.6849 15.8271 23.7849C6.9225 24.7316 0 32.2753 0 41.4166C0 51.2087 7.95792 59.1666 17.75 59.1666H56.2083C64.3733 59.1666 71 52.5399 71 44.3749C71 36.5649 64.9354 30.2341 57.2437 29.7016ZM41.4167 38.4583V50.2916H29.5833V38.4583H20.7083L35.5 23.6666L50.2917 38.4583H41.4167Z"
-                  fill="white"
-                />
-                <path
-                  d="M57.2437 29.7016C55.2321 19.4953 46.2683 11.8333 35.5 11.8333C26.9504 11.8333 19.525 16.6849 15.8271 23.7849C6.9225 24.7316 0 32.2753 0 41.4166C0 51.2087 7.95792 59.1666 17.75 59.1666H56.2083C64.3733 59.1666 71 52.5399 71 44.3749C71 36.5649 64.9354 30.2341 57.2437 29.7016ZM41.4167 38.4583V50.2916H29.5833V38.4583H20.7083L35.5 23.6666L50.2917 38.4583H41.4167Z"
-                  fill="url(#paint0_linear_187_1236)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_187_1236"
-                    x1="1.0767e-06"
-                    y1="16.6993"
-                    x2="40.3371"
-                    y2="75.9701"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#BBD6EB" />
-                    <stop offset="0.302083" stopColor="#EDC1FC" />
-                    <stop offset="0.5625" stopColor="#E8E8EA" />
-                    <stop offset="0.786458" stopColor="#BAE7E4" />
-                    <stop offset="1" stopColor="#C7BFEE" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <p className="text-center font-raleway">
-              Browse your file <br /> Accepted (Word and PDF)
-            </p>
-          </div>
-        </div>
-
-        <div className="flex bg-white gap-4 px-5 py-3 rounded-md items-start mb-14">
-          <div className="mt-3">
-            <svg
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_191_1699)">
-                <path
-                  d="M16 1.5H4C2.9 1.5 2 2.4 2 3.5V17.5H4V3.5H16V1.5ZM15 5.5H8C6.9 5.5 6.01 6.4 6.01 7.5L6 21.5C6 22.6 6.89 23.5 7.99 23.5H19C20.1 23.5 21 22.6 21 21.5V11.5L15 5.5ZM8 21.5V7.5H14V12.5H19V21.5H8Z"
-                  fill="black"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_191_1699">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(0 0.5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-          <div className="w-full">
-            <div className="flex justify-between items-center">
-              <p className="font-raleway text-sm">Assessment. Word</p>
-              <p className="text-orange-400 text-sm uppercase mb-1 cursor-pointer">
-                Cancel
-              </p>
-            </div>
-
-            <div className="h-2 w-full bg-neutral-300 my-1">
-              <div
-                className="h-2 bg-orange-400 rounded-md"
-                style={{ width: "45%" }}
-              ></div>
-            </div>
-
-            <p className="font-raleway text-sm">
-              <span className="text-gray-400">68kb of 192kb </span>
-              <span className="font-semibold text-orange-400">
-                78% uploaded
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold">
+      <div className="w-2/4 mx-auto my-10 flex flex-col gap-5">
+        <textarea
+          placeholder="Describe Assessment"
+          className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-5 focus:outline-none w-full"
+          rows={18}
+        ></textarea>
+        <button className="bg-[#CBFFFE] p-4 rounded-md text-center font-bold">
           Submit
         </button>
       </div>
