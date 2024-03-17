@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4">
           <div className="logo flex justify-center my-1">
-            <Image src="/logo.png" alt="logo" width={150} height={120} />
+            <Image src="/logo.png" alt="logo" width={100} height={20} />
           </div>
           <h1 className="text-center text-5xl font-semibold font-pt-serif">
             Create with AI
