@@ -35,7 +35,7 @@ export default function Screen2() {
 
       <div className="w-full md:w-4/5 lg:w-3/5 xl:w-3/6  mx-auto px-4">
         <div className="logo flex justify-center my-6">
-          <img src="logo.png" width={64} height={64} />
+          <Image src="/logo.png" alt="logo" width={150} height={120} />
         </div>
 
         <h1 className="text-center text-6xl font-pt-serif font-semibold">
