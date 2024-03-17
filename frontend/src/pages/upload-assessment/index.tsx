@@ -142,11 +142,11 @@ export default function UploadAssessment() {
                     y2="75.9701"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#BBD6EB" />
-                    <stop offset="0.302083" stop-color="#EDC1FC" />
-                    <stop offset="0.5625" stop-color="#E8E8EA" />
-                    <stop offset="0.786458" stop-color="#BAE7E4" />
-                    <stop offset="1" stop-color="#C7BFEE" />
+                    <stop stopColor="#BBD6EB" />
+                    <stop offset="0.302083" stopColor="#EDC1FC" />
+                    <stop offset="0.5625" stopColor="#E8E8EA" />
+                    <stop offset="0.786458" stopColor="#BAE7E4" />
+                    <stop offset="1" stopColor="#C7BFEE" />
                   </linearGradient>
                 </defs>
               </svg>
