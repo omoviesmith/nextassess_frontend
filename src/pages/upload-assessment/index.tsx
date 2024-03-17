@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function UploadAssessment() {
+  const router = useRouter();
+
   return (
     <main className="py-4">
       <header className="container mx-auto px-4 mb-10">
-        <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
+        <button
+          className="py-4 px-8 bg-white flex gap-2 rounded-md"
+          onClick={() => router.push("/")}
+        >
           <span>
             <svg
               width="24"
@@ -187,15 +193,20 @@ export default function UploadAssessment() {
           <div className="w-full">
             <div className="flex justify-between items-center">
               <p className="font-raleway text-sm">Assessment. Word</p>
-              <p className="text-orange-400 text-sm uppercase mb-1 cursor-pointer">Cancel</p>
+              <p className="text-orange-400 text-sm uppercase mb-1 cursor-pointer">
+                Cancel
+              </p>
             </div>
 
             <div className="h-2 w-full bg-neutral-300 my-1">
-              <div className="h-2 bg-orange-400 rounded-md" style={{ width: "45%" }}></div>
+              <div
+                className="h-2 bg-orange-400 rounded-md"
+                style={{ width: "45%" }}
+              ></div>
             </div>
 
             <p className="font-raleway text-sm">
-              <span className="text-gray-400">68kb of 192kb{" "}</span>
+              <span className="text-gray-400">68kb of 192kb </span>
               <span className="font-semibold text-orange-400">
                 78% uploaded
               </span>
@@ -208,7 +219,7 @@ export default function UploadAssessment() {
         </button>
       </div>
 
-      <div className="absolute bottom-0 right-10">
+      <div className="fixed bottom-0 right-10 -z-10">
         <svg
           width="485"
           height="418"

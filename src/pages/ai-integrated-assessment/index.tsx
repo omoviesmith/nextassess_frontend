@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Screen10() {
+  const router = useRouter();
+
   return (
     <main className="py-4">
       <header className="container mx-auto px-4 mb-10">
-        <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
+        <button
+          className="py-4 px-8 bg-white flex gap-2 rounded-md"
+          onClick={() => router.push("/")}
+        >
           <span>
             <svg
               width="24"
@@ -125,7 +131,7 @@ export default function Screen10() {
         </button>
       </div>
 
-      <div className="absolute bottom-0 right-10">
+      <div className="fixed bottom-0 right-10 -z-10">
         <svg
           width="485"
           height="418"
