@@ -248,7 +248,7 @@ export default function Home() {
               </button>
             </span>
             <select className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full form-select appearance-none bg-no-repeat">
-              <option disabled>Assessment type preferences</option>
+              <option>Assessment type preferences</option>
               <option>Both Assessment</option>
               <option>AI-Integrated Assessment</option>
               <option>Human Centric Assessment</option>
