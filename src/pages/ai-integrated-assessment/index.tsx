@@ -12,7 +12,7 @@ export default function Screen10() {
       <header className="container mx-auto px-4 mb-10">
         <button
           className="py-4 px-8 bg-white flex gap-2 rounded-md"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/ai-generated-assessment")}
         >
           <span>
             <svg
