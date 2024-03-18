@@ -6,23 +6,23 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-cover">
+    <div className="bg-cover h-full">
       <main className="py-4">
         <header className="container mx-auto px-4">
-          <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
-            <img src="/icons/home.png" />
+          <button className="py-2 px-6 bg-white  text-[12px] flex gap-2 rounded-md">
+            <Image src="/icons/home.png" alt="icon" height={18} width={18} />
             <span>Home</span>
           </button>
         </header>
 
         <div className="container mx-auto px-4">
           <div className="logo flex justify-center my-1">
-            <Image src="/logo.png" alt="logo" width={100} height={20} />
+            <Image src="/logo.png" alt="logo" width={80} height={20} />
           </div>
-          <h1 className="text-center text-5xl font-semibold font-pt-serif">
+          <h1 className="text-center text-2xl xl:text-3xl font-semibold font-pt-serif">
             Create with AI
           </h1>
-          <p className="text-center mt-3 font-raleway">
+          <p className="text-center text-[10px] xl:text-sm mt-1 font-raleway">
             Ask anything, get your Assessment
           </p>
 
@@ -99,246 +99,252 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-3/4 mx-auto px-40 mt-10">
+        <div className="container mx-auto px-40 mt-5">
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-            <Link href="/upload-assessment">
-              <div className="shadow-md bg-[#CBFFFE]">
-                <div className="flex justify-center relative">
-                  <div className="flex justify-center">
+            <div className="w-[293px]">
+              <Link href="/upload-assessment">
+                <div className="shadow-md bg-[#CBFFFE] rounded-t-xl">
+                  <div className="flex justify-center relative">
+                    <div className="flex justify-center w-full">
+                      <svg
+                        width="293"
+                        height="196"
+                        viewBox="0 0 293 196"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 14C0 6.26802 6.26801 0 14 0H279C286.732 0 293 6.26801 293 14V196H0V14Z"
+                          fill="#CBFFFE"
+                        />
+                        <path
+                          d="M42 73.4702C42 68.5178 46.4542 64.7551 51.337 65.5828L145.163 81.4876C146.048 81.6377 146.952 81.6377 147.837 81.4876L241.663 65.5828C246.546 64.7551 251 68.5178 251 73.4702V178.032C251 183.149 246.264 186.95 241.269 185.843L148.231 165.219C147.091 164.966 145.909 164.966 144.769 165.219L51.7314 185.843C46.7363 186.95 42 183.149 42 178.032V73.4702Z"
+                          fill="#AAF2F1"
+                        />
+                        <rect
+                          x="65"
+                          y="101"
+                          width="164"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                        <rect
+                          x="65"
+                          y="127"
+                          width="164"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                        <rect
+                          x="65"
+                          y="114"
+                          width="85"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                        <rect
+                          x="65"
+                          y="140"
+                          width="85"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                        <rect
+                          x="157"
+                          y="114"
+                          width="72"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                        <rect
+                          x="157"
+                          y="140"
+                          width="72"
+                          height="5"
+                          rx="2.5"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                    <button className="absolute right-0 rounded-l-full font-bold top-5 px-4 py-1 bg-[#D2CEFE] text-sm">
+                      Popular
+                    </button>
+                  </div>
+                  <div className="p-5 bg-white">
+                    <p className="font-poppins">Upload Assessment</p>
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
+                      Upload any thing regarding document and pdf files
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="w-[293px]">
+              <Link href="/describe-assessment">
+                <div className="shadow-md bg-[#CBFFFE] rounded-t-xl">
+                  <div className="flex justify-center w-full">
                     <svg
                       width="293"
                       height="196"
-                      viewBox="0 0 293 196"
+                      viewBox="0 0 278 196"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M0 14C0 6.26802 6.26801 0 14 0H279C286.732 0 293 6.26801 293 14V196H0V14Z"
-                        fill="#CBFFFE"
-                      />
-                      <path
-                        d="M42 73.4702C42 68.5178 46.4542 64.7551 51.337 65.5828L145.163 81.4876C146.048 81.6377 146.952 81.6377 147.837 81.4876L241.663 65.5828C246.546 64.7551 251 68.5178 251 73.4702V178.032C251 183.149 246.264 186.95 241.269 185.843L148.231 165.219C147.091 164.966 145.909 164.966 144.769 165.219L51.7314 185.843C46.7363 186.95 42 183.149 42 178.032V73.4702Z"
-                        fill="#AAF2F1"
+                      <g clip-path="url(#clip0_103_355)">
+                        <path
+                          d="M139 -32L152.742 55.7158L208.5 -13.3775L176.543 69.4574L259.378 37.5L190.284 93.2584L278 107L190.284 120.742L259.378 176.5L176.543 144.543L208.5 227.378L152.742 158.284L139 246L125.258 158.284L69.5 227.378L101.457 144.543L18.6225 176.5L87.7158 120.742L0 107L87.7158 93.2584L18.6225 37.5L101.457 69.4574L69.5 -13.3775L125.258 55.7158L139 -32Z"
+                          fill="#AAF2F1"
+                        />
+                      </g>
+                      <rect
+                        x="33"
+                        y="81"
+                        width="209"
+                        height="35"
+                        rx="5"
+                        fill="white"
                       />
                       <rect
-                        x="65"
+                        x="90"
+                        y="90"
+                        width="130"
+                        height="5"
+                        rx="2.5"
+                        fill="#91FBF8"
+                      />
+                      <rect
+                        x="90"
                         y="101"
-                        width="164"
+                        width="67"
                         height="5"
                         rx="2.5"
-                        fill="white"
+                        fill="#91FBF8"
                       />
                       <rect
-                        x="65"
-                        y="127"
-                        width="164"
+                        x="163"
+                        y="101"
+                        width="57"
                         height="5"
                         rx="2.5"
-                        fill="white"
+                        fill="#91FBF8"
                       />
-                      <rect
-                        x="65"
-                        y="114"
-                        width="85"
-                        height="5"
-                        rx="2.5"
-                        fill="white"
-                      />
-                      <rect
-                        x="65"
-                        y="140"
-                        width="85"
-                        height="5"
-                        rx="2.5"
-                        fill="white"
-                      />
-                      <rect
-                        x="157"
-                        y="114"
-                        width="72"
-                        height="5"
-                        rx="2.5"
-                        fill="white"
-                      />
-                      <rect
-                        x="157"
-                        y="140"
-                        width="72"
-                        height="5"
-                        rx="2.5"
-                        fill="white"
-                      />
+                      <defs>
+                        <clipPath id="clip0_103_355">
+                          <rect width="278" height="196" fill="white" />
+                        </clipPath>
+                      </defs>
                     </svg>
                   </div>
-                  <button className="absolute right-0 rounded-l-full font-bold top-5 px-4 py-1 bg-[#D2CEFE]">
-                    Popular
-                  </button>
-                </div>
-                <div className="p-5 bg-white">
-                  <p className="font-poppins">Upload Assessment</p>
-                  <p className="font-raleway text-gray-400 mt-3">
-                    Upload any thing regarding document and pdf files
-                  </p>
-                </div>
-              </div>
-            </Link>
 
-            <Link href="/describe-assessment">
-              <div className="shadow-md bg-[#CBFFFE]">
-                <div className="flex justify-center">
+                  <div className="p-5 bg-white  ">
+                    <p className="font-poppins">Describe Assessment</p>
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
+                      Describe your assessment and see the magic
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="w-[293px]">
+              <Link href="/programmatic-assessment">
+                <div className="shadow-md bg-[#CBFFFE] rounded-t-xl z-10">
                   <svg
-                    width="278"
+                    width="293"
                     height="196"
-                    viewBox="0 0 278 196"
+                    viewBox="0 0 293 196"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g clip-path="url(#clip0_103_355)">
-                      <path
-                        d="M139 -32L152.742 55.7158L208.5 -13.3775L176.543 69.4574L259.378 37.5L190.284 93.2584L278 107L190.284 120.742L259.378 176.5L176.543 144.543L208.5 227.378L152.742 158.284L139 246L125.258 158.284L69.5 227.378L101.457 144.543L18.6225 176.5L87.7158 120.742L0 107L87.7158 93.2584L18.6225 37.5L101.457 69.4574L69.5 -13.3775L125.258 55.7158L139 -32Z"
-                        fill="#AAF2F1"
-                      />
-                    </g>
+                    <path
+                      d="M0 14C0 6.26802 6.26801 0 14 0H279C286.732 0 293 6.26801 293 14V196H0V14Z"
+                      fill="#CBFFFE"
+                    />
+                    <path
+                      d="M82 0L89.4145 47.3287L119.5 10.0481L102.257 54.7432L146.952 37.5L109.671 67.5855L157 75L109.671 82.4145L146.952 112.5L102.257 95.2568L119.5 139.952L89.4145 102.671L82 150L74.5855 102.671L44.5 139.952L61.7432 95.2568L17.0481 112.5L54.3287 82.4145L7 75L54.3287 67.5855L17.0481 37.5L61.7432 54.7432L44.5 10.0481L74.5855 47.3287L82 0Z"
+                      fill="#AAF2F1"
+                    />
+                    <path
+                      d="M221 0L227.327 40.3871L253 8.57438L238.286 46.7142L276.426 32L244.613 57.673L285 64L244.613 70.327L276.426 96L238.286 81.2858L253 119.426L227.327 87.6129L221 128L214.673 87.6129L189 119.426L203.714 81.2858L165.574 96L197.387 70.327L157 64L197.387 57.673L165.574 32L203.714 46.7142L189 8.57438L214.673 40.3871L221 0Z"
+                      fill="#AAF2F1"
+                    />
+                    <path
+                      d="M42 70.2826C42 66.5948 44.5209 63.3849 48.1035 62.5106L144.603 38.9628C145.85 38.6587 147.15 38.6587 148.397 38.9628L244.896 62.5106C248.479 63.3849 251 66.5948 251 70.2826V180C251 184.418 247.418 188 243 188H146.5H50C45.5817 188 42 184.418 42 180V70.2826Z"
+                      fill="#AAF2F1"
+                    />
                     <rect
-                      x="33"
-                      y="81"
-                      width="209"
-                      height="35"
-                      rx="5"
+                      x="65"
+                      y="101"
+                      width="164"
+                      height="5"
+                      rx="2.5"
                       fill="white"
                     />
                     <rect
-                      x="90"
-                      y="90"
-                      width="130"
+                      x="65"
+                      y="153"
+                      width="164"
                       height="5"
                       rx="2.5"
-                      fill="#91FBF8"
+                      fill="white"
                     />
                     <rect
-                      x="90"
-                      y="101"
-                      width="67"
+                      x="65"
+                      y="127"
+                      width="164"
                       height="5"
                       rx="2.5"
-                      fill="#91FBF8"
+                      fill="white"
                     />
                     <rect
-                      x="163"
-                      y="101"
-                      width="57"
+                      x="65"
+                      y="114"
+                      width="85"
                       height="5"
                       rx="2.5"
-                      fill="#91FBF8"
+                      fill="white"
                     />
-                    <defs>
-                      <clipPath id="clip0_103_355">
-                        <rect width="278" height="196" fill="white" />
-                      </clipPath>
-                    </defs>
+                    <rect
+                      x="65"
+                      y="140"
+                      width="85"
+                      height="5"
+                      rx="2.5"
+                      fill="white"
+                    />
+                    <rect
+                      x="157"
+                      y="114"
+                      width="72"
+                      height="5"
+                      rx="2.5"
+                      fill="white"
+                    />
+                    <rect
+                      x="157"
+                      y="140"
+                      width="72"
+                      height="5"
+                      rx="2.5"
+                      fill="white"
+                    />
                   </svg>
-                </div>
 
-                <div className="p-5 bg-white">
-                  <p className="font-poppins">Describe Assessment</p>
-                  <p className="font-raleway text-gray-400 mt-3">
-                    Describe your assessment and see the magic
-                  </p>
+                  <div className="p-5 bg-white">
+                    <p className="font-poppins">Programmatic Assessment</p>
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
+                      Upload any thing regarding document and pdf files
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-
-            <Link href="/programmatic-assessment">
-              <div className="shadow-md bg-[#CBFFFE] z-10">
-                <svg
-                  width="293"
-                  height="196"
-                  viewBox="0 0 293 196"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 14C0 6.26802 6.26801 0 14 0H279C286.732 0 293 6.26801 293 14V196H0V14Z"
-                    fill="#CBFFFE"
-                  />
-                  <path
-                    d="M82 0L89.4145 47.3287L119.5 10.0481L102.257 54.7432L146.952 37.5L109.671 67.5855L157 75L109.671 82.4145L146.952 112.5L102.257 95.2568L119.5 139.952L89.4145 102.671L82 150L74.5855 102.671L44.5 139.952L61.7432 95.2568L17.0481 112.5L54.3287 82.4145L7 75L54.3287 67.5855L17.0481 37.5L61.7432 54.7432L44.5 10.0481L74.5855 47.3287L82 0Z"
-                    fill="#AAF2F1"
-                  />
-                  <path
-                    d="M221 0L227.327 40.3871L253 8.57438L238.286 46.7142L276.426 32L244.613 57.673L285 64L244.613 70.327L276.426 96L238.286 81.2858L253 119.426L227.327 87.6129L221 128L214.673 87.6129L189 119.426L203.714 81.2858L165.574 96L197.387 70.327L157 64L197.387 57.673L165.574 32L203.714 46.7142L189 8.57438L214.673 40.3871L221 0Z"
-                    fill="#AAF2F1"
-                  />
-                  <path
-                    d="M42 70.2826C42 66.5948 44.5209 63.3849 48.1035 62.5106L144.603 38.9628C145.85 38.6587 147.15 38.6587 148.397 38.9628L244.896 62.5106C248.479 63.3849 251 66.5948 251 70.2826V180C251 184.418 247.418 188 243 188H146.5H50C45.5817 188 42 184.418 42 180V70.2826Z"
-                    fill="#AAF2F1"
-                  />
-                  <rect
-                    x="65"
-                    y="101"
-                    width="164"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="65"
-                    y="153"
-                    width="164"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="65"
-                    y="127"
-                    width="164"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="65"
-                    y="114"
-                    width="85"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="65"
-                    y="140"
-                    width="85"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="157"
-                    y="114"
-                    width="72"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                  <rect
-                    x="157"
-                    y="140"
-                    width="72"
-                    height="5"
-                    rx="2.5"
-                    fill="white"
-                  />
-                </svg>
-
-                <div className="p-5 bg-white">
-                  <p className="font-poppins">Programmatic Assessment</p>
-                  <p className="font-raleway text-gray-400 mt-3">
-                    Upload any thing regarding document and pdf files
-                  </p>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         </div>
 
