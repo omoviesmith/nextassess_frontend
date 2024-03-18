@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function UploadAssessment() {
   const router = useRouter();
+  const [select, setSelected] = useState<any>(null);
 
   return (
-    <div className="bg-cover">
+    <div className="bg-cover h-screen">
       <main className="py-4">
         <header className="container mx-auto px-4 mb-10">
           <button
@@ -121,10 +123,13 @@ export default function UploadAssessment() {
           </div>
         </div>
 
-        <div className="w-3/4 md:w-5/12 mx-auto mt-10 flex flex-col gap-5">
-          <div className="border-dotted border-2 rounded-lg border-orange-400 bg-white py-20 mb-5">
-            <div className="flex flex-col gap-2 justify-center items-center ">
-              <div>
+        <div className="w-3/4 md:w-5/12 mx-auto mt-10 flex flex-col relative">
+          <div className="flex flex-col items-center justify-center w-full">
+            <label
+              htmlFor="dropzone-file"
+              className="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-400 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+            >
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
                   width="71"
                   height="71"
@@ -157,65 +162,78 @@ export default function UploadAssessment() {
                     </linearGradient>
                   </defs>
                 </svg>
+                <p className="font-raleway">
+                  <span>Browse your file</span>
+                </p>
+                <p className="font-raleway">Accepted (Word and PDF)</p>
               </div>
-              <p className="text-center font-raleway">
-                Browse your file <br /> Accepted (Word and PDF)
-              </p>
-            </div>
-          </div>
+              <input
+                id="dropzone-file"
+                onChange={(e) => {
+                  if (e.target.files && e.target.files.length > 0) {
+                    setSelected(e.target.files[0]);
+                  }
+                }}
+                type="file"
+                className="hidden"
+              />
+            </label>
 
-          {/* <div className="flex bg-white gap-4 px-5 py-3 rounded-md items-start mb-14">
-          <div className="mt-3">
-            <svg
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_191_1699)">
-                <path
-                  d="M16 1.5H4C2.9 1.5 2 2.4 2 3.5V17.5H4V3.5H16V1.5ZM15 5.5H8C6.9 5.5 6.01 6.4 6.01 7.5L6 21.5C6 22.6 6.89 23.5 7.99 23.5H19C20.1 23.5 21 22.6 21 21.5V11.5L15 5.5ZM8 21.5V7.5H14V12.5H19V21.5H8Z"
-                  fill="black"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_191_1699">
-                  <rect
+            {select && (
+              <div className="flex bg-white gap-4 px-5 py-3 rounded-md items-start mb-14 w-full mt-10">
+                <div className="mt-3">
+                  <svg
                     width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(0 0.5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_191_1699)">
+                      <path
+                        d="M16 1.5H4C2.9 1.5 2 2.4 2 3.5V17.5H4V3.5H16V1.5ZM15 5.5H8C6.9 5.5 6.01 6.4 6.01 7.5L6 21.5C6 22.6 6.89 23.5 7.99 23.5H19C20.1 23.5 21 22.6 21 21.5V11.5L15 5.5ZM8 21.5V7.5H14V12.5H19V21.5H8Z"
+                        fill="black"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_191_1699">
+                        <rect
+                          width="24"
+                          height="24"
+                          fill="white"
+                          transform="translate(0 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between items-center">
+                    <p className="font-raleway text-sm">Assessment. Word</p>
+                    <p className="text-orange-400 text-sm uppercase mb-1 cursor-pointer">
+                      Cancel
+                    </p>
+                  </div>
+
+                  <div className="h-2 w-full bg-neutral-300 my-1">
+                    <div
+                      className="h-2 bg-orange-400 rounded-md"
+                      style={{ width: "45%" }}
+                    ></div>
+                  </div>
+
+                  <p className="font-raleway text-sm">
+                    <span className="text-gray-400">68kb of 192kb </span>
+                    <span className="font-semibold text-orange-400">
+                      78% uploaded
+                    </span>
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
-          <div className="w-full">
-            <div className="flex justify-between items-center">
-              <p className="font-raleway text-sm">Assessment. Word</p>
-              <p className="text-orange-400 text-sm uppercase mb-1 cursor-pointer">
-                Cancel
-              </p>
-            </div>
 
-            <div className="h-2 w-full bg-neutral-300 my-1">
-              <div
-                className="h-2 bg-orange-400 rounded-md"
-                style={{ width: "45%" }}
-              ></div>
-            </div>
-
-            <p className="font-raleway text-sm">
-              <span className="text-gray-400">68kb of 192kb </span>
-              <span className="font-semibold text-orange-400">
-                78% uploaded
-              </span>
-            </p>
-          </div>
-        </div> */}
-
-          <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold">
+          <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold w-full mt-20">
             Submit
           </button>
         </div>
