@@ -12,7 +12,8 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: fill;
-  max-height: max-content; 
+  height: 100%;
+  /* max-height: max-content;  */
 }
 
 .bg-cover {

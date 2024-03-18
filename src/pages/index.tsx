@@ -9,20 +9,20 @@ export default function Home() {
     <div className="bg-cover h-full">
       <main className="py-4">
         <header className="container mx-auto px-4">
-          <button className="py-4 px-8 bg-white flex gap-2 rounded-md">
-            <img src="/icons/home.png" />
+          <button className="py-2 px-6 bg-white  text-[12px] flex gap-2 rounded-md">
+            <Image src="/icons/home.png" alt="icon" height={18} width={18} />
             <span>Home</span>
           </button>
         </header>
 
         <div className="container mx-auto px-4">
           <div className="logo flex justify-center my-1">
-            <Image src="/logo.png" alt="logo" width={100} height={20} />
+            <Image src="/logo.png" alt="logo" width={80} height={20} />
           </div>
-          <h1 className="text-center text-5xl font-semibold font-pt-serif">
+          <h1 className="text-center text-2xl xl:text-3xl font-semibold font-pt-serif">
             Create with AI
           </h1>
-          <p className="text-center mt-3 font-raleway">
+          <p className="text-center text-[10px] xl:text-sm mt-1 font-raleway">
             Ask anything, get your Assessment
           </p>
 
@@ -171,13 +171,13 @@ export default function Home() {
                         />
                       </svg>
                     </div>
-                    <button className="absolute right-0 rounded-l-full font-bold top-5 px-4 py-1 bg-[#D2CEFE]">
+                    <button className="absolute right-0 rounded-l-full font-bold top-5 px-4 py-1 bg-[#D2CEFE] text-sm">
                       Popular
                     </button>
                   </div>
                   <div className="p-5 bg-white">
                     <p className="font-poppins">Upload Assessment</p>
-                    <p className="font-raleway text-gray-400 mt-3">
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
                       Upload any thing regarding document and pdf files
                     </p>
                   </div>
@@ -244,7 +244,7 @@ export default function Home() {
 
                   <div className="p-5 bg-white  ">
                     <p className="font-poppins">Describe Assessment</p>
-                    <p className="font-raleway text-gray-400 mt-3">
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
                       Describe your assessment and see the magic
                     </p>
                   </div>
@@ -338,7 +338,7 @@ export default function Home() {
 
                   <div className="p-5 bg-white">
                     <p className="font-poppins">Programmatic Assessment</p>
-                    <p className="font-raleway text-gray-400 mt-3">
+                    <p className="font-raleway text-gray-400 mt-3 text-sm">
                       Upload any thing regarding document and pdf files
                     </p>
                   </div>
