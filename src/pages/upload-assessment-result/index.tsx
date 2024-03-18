@@ -1,6 +1,6 @@
 const UploadAssessment9 = () => {
   return (
-    <div className="bg-cover">
+    <div className="bg-cover h-screen">
       <div className="w-full lg:w-10/12 mx-auto px-4 py-4">
         <div className="flex flex-wrap gap-10 justify-between items-center">
           <div className="bg-white flex flex-wrap px-6 py-3 gap-2 rounded-md">

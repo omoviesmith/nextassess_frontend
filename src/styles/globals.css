@@ -8,21 +8,16 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-image: url('/background-1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: fill;
-  height: 100%;
-  /* max-height: max-content;  */
 }
 
-.bg-cover {
-  /* background-image: url('/background.png');
+.mybkg {
   background-size: cover;
-  height: 100%;
-  width: 100%;
+  background-position: center;
+  background-image: url('/background-1.png');
   background-repeat: no-repeat;
-  background-position: center; */
+  width: 100%;
+  height: 100%;
+  max-height: max-content;
 }
 
 .font-poppins {

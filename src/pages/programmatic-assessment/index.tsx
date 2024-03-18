@@ -11,13 +11,13 @@ export default function Home() {
     <main className="py-4">
       <header className="container mx-auto px-4 mb-10">
         <button
-          className="py-4 px-8 bg-white flex gap-2 rounded-md"
+          className="py-2 px-6 bg-white  text-[12px] flex gap-2 rounded-md"
           onClick={() => router.push("/")}
         >
           <span>
             <svg
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,10 +40,10 @@ export default function Home() {
       </header>
 
       <div className="container mx-auto px-4">
-        <h1 className="text-center text-5xl font-semibold font-pt-serif">
+        <h1 className="text-center font-bold text-2xl xl:text-3xl font-pt-serif">
           Programmatic Assessment
         </h1>
-        <p className="text-center mt-3 font-raleway">
+        <p className="text-center text-[10px] xl:text-sm mt-1 font-raleway">
           Describe your assessment in detail
         </p>
 

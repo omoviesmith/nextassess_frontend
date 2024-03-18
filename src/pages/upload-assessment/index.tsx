@@ -46,7 +46,7 @@ export default function UploadAssessment() {
           <h1 className="text-center font-bold text-2xl xl:text-3xl font-pt-serif">
             Upload Assessment
           </h1>
-          <p className="text-center mt-3 font-raleway">
+          <p className="text-center text-[10px] xl:text-sm mt-1 font-raleway">
             Describe your assessment in detail
           </p>
 
@@ -123,7 +123,7 @@ export default function UploadAssessment() {
           </div>
         </div>
 
-        <div className="w-3/4 md:w-5/12 mx-auto mt-10 flex flex-col relative">
+        <div className="w-3/4 md:w-5/12 mx-auto mt-5 flex flex-col relative">
           <div className="flex flex-col items-center justify-center w-full">
             <label
               htmlFor="dropzone-file"
@@ -233,7 +233,7 @@ export default function UploadAssessment() {
             )}
           </div>
 
-          <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold w-full mt-20">
+          <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold w-full mt-10">
             Submit
           </button>
         </div>
