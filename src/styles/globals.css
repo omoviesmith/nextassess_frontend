@@ -11,8 +11,9 @@ body {
   background-image: url('/background-1.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
-  height: 100%;
+  /* background-position: top; */
+
+  max-height: max-content; 
 }
 
 .bg-cover {
