@@ -120,7 +120,7 @@ export default function UploadAssessment() {
         </div>
       </div>
 
-      <div className="w-3/4 md:w-2/4 mx-auto mt-10 flex flex-col gap-5">
+      <div className="w-3/4 md:w-5/12 mx-auto mt-10 flex flex-col gap-5">
         <div className="border-dotted border-2 rounded-lg border-orange-400 bg-white py-20 mb-5">
           <div className="flex flex-col gap-2 justify-center items-center ">
             <div>
@@ -163,7 +163,7 @@ export default function UploadAssessment() {
           </div>
         </div>
 
-        <div className="flex bg-white gap-4 px-5 py-3 rounded-md items-start mb-14">
+        {/* <div className="flex bg-white gap-4 px-5 py-3 rounded-md items-start mb-14">
           <div className="mt-3">
             <svg
               width="24"
@@ -212,9 +212,9 @@ export default function UploadAssessment() {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold">
+        <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold mt-20">
           Submit
         </button>
       </div>
