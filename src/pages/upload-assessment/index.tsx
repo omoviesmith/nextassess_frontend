@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,13 +10,37 @@ export default function UploadAssessment() {
   const router = useRouter();
   const [select, setSelected] = useState<any>(null);
 
+  function uploadFile(fd: FormData) {
+    return new Promise((resolve, reject) => {
+      let config = {
+        headers: {
+          "Content-type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent: any) => {
+          console.log(progressEvent.loaded);
+        },
+      };
+
+      axios
+        .post("https://nextassess.onrender.com/upload_assessment", fd, config)
+        .then((response) => {
+          // Resolve the promise when the upload is successful.
+          resolve(response.data.url);
+        })
+        .catch((error) => {
+          // Reject the promise if an error occurs.
+          reject(error);
+        });
+    });
+  }
+
   return (
     <div className="bg-cover h-screen">
       <main className="py-4">
         <header className="container mx-auto px-4 mb-10">
           <button
             className="py-2 px-6 bg-white  text-[12px] flex gap-2 rounded-md"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/ai-generated-assessment-v1")}
           >
             <span>
               <svg
@@ -172,6 +197,31 @@ export default function UploadAssessment() {
                 onChange={(e) => {
                   if (e.target.files && e.target.files.length > 0) {
                     setSelected(e.target.files[0]);
+
+                    const fd = new FormData();
+                    fd.append("file", e.target.files[0]);
+
+                    uploadFile(fd)
+                      .then((url: any) => {
+                        // Handle successful upload here
+                        window.location = url;
+                      })
+                      .catch((error) => {
+                        // Handle upload error here
+                        console.error("Upload error:", error);
+                      });
+
+                    // fetch("https://nextassess.onrender.com/upload_assessment", {
+                    //   body: fd,
+                    //   method: "POST",
+                    // })
+                    //   .then(async (response) => {
+                    //     let result = await response.json();
+                    //     console.log(result);
+                    //   })
+                    //   .catch((reason) => {
+                    //     console.log(reason.error);
+                    //   });
                   }
                 }}
                 type="file"
@@ -233,7 +283,13 @@ export default function UploadAssessment() {
             )}
           </div>
 
-          <button className="bg-[#CCCCCC] p-4 rounded-md text-center font-bold w-full mt-10">
+          <button
+            onClick={() => router.push("/upload-assessment-result")}
+            className={`p-4 rounded-md text-center font-bold w-full mt-10 ${
+              select ? "bg-[#CBFFFE]" : "bg-[#CCCCCC]"
+            }`}
+            disabled={select ? false : true}
+          >
             Submit
           </button>
         </div>

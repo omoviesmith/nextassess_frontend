@@ -1,18 +1,53 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
+  const [year_level, setYearLevel] = useState("");
+  const [course, setCourse] = useState<number>(0);
+  const [learning_outcomes, setLearningOutcomes] = useState<string[]>([]);
+  const [describe_assessment, setDescribeAssessment] = useState("");
+
+  const cleanup = () => {
+    setYearLevel("");
+    setCourse(0);
+    setLearningOutcomes([]);
+    setDescribeAssessment("");
+  };
+
+  const handler = async () => {
+    let payload = {
+      year_level,
+      course,
+      learning_outcomes,
+      describe_assessment,
+    };
+
+    try {
+      let response = await axios.post(
+        "https://nextassess.onrender.com/describe_assessment",
+        payload
+      );
+      console.log(response.data.url);
+      window.location = response.data.url;
+      router.push("/view-describe-assessment");
+      cleanup();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <main className="py-4">
       <header className="container mx-auto px-4 mb-10">
         <button
           className="py-2 px-6 bg-white  text-[12px] flex gap-2 rounded-md"
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/ai-generated-assessment-v2")}
         >
           <span>
             <svg
@@ -40,7 +75,7 @@ export default function Home() {
       </header>
 
       <div className="container mx-auto px-4">
-        <h1  className="text-center font-bold text-2xl xl:text-3xl font-pt-serif">
+        <h1 className="text-center font-bold text-2xl xl:text-3xl font-pt-serif">
           Describe Assessment
         </h1>
         <p className="text-center text-[10px] xl:text-sm mt-1 font-raleway">
@@ -121,152 +156,162 @@ export default function Home() {
       </div>
 
       <div className="w-2/4 mx-auto my-10 flex flex-col gap-5">
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+        <form>
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
+            <div className="relative w-full">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-4">
+                <button
+                  type="button"
+                  className="p-1 focus:outline-none focus:shadow-outline"
                 >
-                  <g clip-path="url(#clip0_125_930)">
-                    <path
-                      d="M20 3.5H19V1.5H17V3.5H7V1.5H5V3.5H4C2.9 3.5 2 4.4 2 5.5V21.5C2 22.6 2.9 23.5 4 23.5H20C21.1 23.5 22 22.6 22 21.5V5.5C22 4.4 21.1 3.5 20 3.5ZM20 21.5H4V10.5H20V21.5ZM20 8.5H4V5.5H20V8.5Z"
-                      fill="black"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_930">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_125_930)">
+                      <path
+                        d="M20 3.5H19V1.5H17V3.5H7V1.5H5V3.5H4C2.9 3.5 2 4.4 2 5.5V21.5C2 22.6 2.9 23.5 4 23.5H20C21.1 23.5 22 22.6 22 21.5V5.5C22 4.4 21.1 3.5 20 3.5ZM20 21.5H4V10.5H20V21.5ZM20 8.5H4V5.5H20V8.5Z"
+                        fill="black"
                       />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Year Level"
-              autoComplete="off"
-            />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_125_930">
+                        <rect
+                          width="24"
+                          height="24"
+                          fill="white"
+                          transform="translate(0 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </span>
+              <input
+                type="text"
+                className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
+                placeholder="Year Level"
+                onChange={(e) => setYearLevel(e.target.value)}
+                autoComplete="off"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
+            <div className="relative w-full">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-4">
+                <button
+                  type="button"
+                  className="p-1 focus:outline-none focus:shadow-outline"
                 >
-                  <g clip-path="url(#clip0_125_933)">
-                    <path
-                      d="M17 1.5H7C5.9 1.5 5 2.4 5 3.5V21.5C5 22.6 5.9 23.5 7 23.5H17C18.1 23.5 19 22.6 19 21.5V3.5C19 2.4 18.1 1.5 17 1.5ZM17 19.5H7V5.5H17V19.5ZM8 6.5H16V8.5H8V6.5Z"
-                      fill="black"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_933">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_125_933)">
+                      <path
+                        d="M17 1.5H7C5.9 1.5 5 2.4 5 3.5V21.5C5 22.6 5.9 23.5 7 23.5H17C18.1 23.5 19 22.6 19 21.5V3.5C19 2.4 18.1 1.5 17 1.5ZM17 19.5H7V5.5H17V19.5ZM8 6.5H16V8.5H8V6.5Z"
+                        fill="black"
                       />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Course / Unit"
-              autoComplete="off"
-            />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_125_933">
+                        <rect
+                          width="24"
+                          height="24"
+                          fill="white"
+                          transform="translate(0 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </span>
+              <input
+                type="text"
+                className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
+                placeholder="Course / Unit"
+                onChange={(e) => setCourse(parseInt(e.target.value))}
+                autoComplete="off"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
-          <div className="relative w-full">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4">
-              <button
-                type="submit"
-                className="p-1 focus:outline-none focus:shadow-outline"
-              >
-                <svg
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
+            <div className="relative w-full">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-4">
+                <button
+                  type="submit"
+                  className="p-1 focus:outline-none focus:shadow-outline"
                 >
-                  <g clip-path="url(#clip0_125_939)">
-                    <path
-                      d="M21 5.5C19.89 5.15 18.67 5 17.5 5C15.55 5 13.45 5.4 12 6.5C10.55 5.4 8.45 5 6.5 5C4.55 5 2.45 5.4 1 6.5V21.15C1 21.4 1.25 21.65 1.5 21.65C1.6 21.65 1.65 21.6 1.75 21.6C3.1 20.95 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.8 22.25 21.55C22.35 21.6 22.4 21.6 22.5 21.6C22.75 21.6 23 21.35 23 21.1V6.5C22.4 6.05 21.75 5.75 21 5.5ZM21 19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V8.5C13.35 7.65 15.8 7 17.5 7C18.7 7 19.9 7.15 21 7.5V19Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M17.5 11C18.38 11 19.23 11.09 20 11.26V9.74C19.21 9.59 18.36 9.5 17.5 9.5C15.8 9.5 14.26 9.79 13 10.33V11.99C14.13 11.35 15.7 11 17.5 11Z"
-                      fill="#323232"
-                    />
-                    <path
-                      d="M13 12.99V14.65C14.13 14.01 15.7 13.66 17.5 13.66C18.38 13.66 19.23 13.75 20 13.92V12.4C19.21 12.25 18.36 12.16 17.5 12.16C15.8 12.16 14.26 12.46 13 12.99Z"
-                      fill="#323232"
-                    />
-                    <path
-                      d="M17.5 14.83C15.8 14.83 14.26 15.12 13 15.66V17.32C14.13 16.68 15.7 16.33 17.5 16.33C18.38 16.33 19.23 16.42 20 16.59V15.07C19.21 14.91 18.36 14.83 17.5 14.83Z"
-                      fill="#323232"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_125_939">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="translate(0 0.5)"
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_125_939)">
+                      <path
+                        d="M21 5.5C19.89 5.15 18.67 5 17.5 5C15.55 5 13.45 5.4 12 6.5C10.55 5.4 8.45 5 6.5 5C4.55 5 2.45 5.4 1 6.5V21.15C1 21.4 1.25 21.65 1.5 21.65C1.6 21.65 1.65 21.6 1.75 21.6C3.1 20.95 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.8 22.25 21.55C22.35 21.6 22.4 21.6 22.5 21.6C22.75 21.6 23 21.35 23 21.1V6.5C22.4 6.05 21.75 5.75 21 5.5ZM21 19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V8.5C13.35 7.65 15.8 7 17.5 7C18.7 7 19.9 7.15 21 7.5V19Z"
+                        fill="black"
                       />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </span>
-            <input
-              type="text"
-              className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
-              placeholder="Learning Outcomes"
-              autoComplete="off"
-            />
+                      <path
+                        d="M17.5 11C18.38 11 19.23 11.09 20 11.26V9.74C19.21 9.59 18.36 9.5 17.5 9.5C15.8 9.5 14.26 9.79 13 10.33V11.99C14.13 11.35 15.7 11 17.5 11Z"
+                        fill="#323232"
+                      />
+                      <path
+                        d="M13 12.99V14.65C14.13 14.01 15.7 13.66 17.5 13.66C18.38 13.66 19.23 13.75 20 13.92V12.4C19.21 12.25 18.36 12.16 17.5 12.16C15.8 12.16 14.26 12.46 13 12.99Z"
+                        fill="#323232"
+                      />
+                      <path
+                        d="M17.5 14.83C15.8 14.83 14.26 15.12 13 15.66V17.32C14.13 16.68 15.7 16.33 17.5 16.33C18.38 16.33 19.23 16.42 20 16.59V15.07C19.21 14.91 18.36 14.83 17.5 14.83Z"
+                        fill="#323232"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_125_939">
+                        <rect
+                          width="24"
+                          height="24"
+                          fill="white"
+                          transform="translate(0 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </span>
+              <input
+                type="text"
+                className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-14 focus:outline-none w-full"
+                placeholder="Learning Outcomes"
+                onChange={(e) => setLearningOutcomes([`${e.target.value}`])}
+                autoComplete="off"
+              />
+            </div>
           </div>
-        </div>
 
-        <textarea
-          placeholder="Describe Assessment"
-          className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-5 focus:outline-none w-full"
-          rows={10}
-        ></textarea>
-        <button className="bg-[#CBFFFE] p-4 rounded-md text-center font-bold">
-          Submit
-        </button>
+          <textarea
+            placeholder="Describe Assessment"
+            className="py-4 text-md font-raleway bg-white placeholder:text-gray-700 rounded-md pl-5 focus:outline-none w-full"
+            rows={10}
+            onChange={(e) => setDescribeAssessment(e.target.value)}
+          ></textarea>
+          <button
+            type="button"
+            onClick={handler}
+            className="bg-[#CBFFFE] p-4 rounded-md text-center font-bold"
+          >
+            Submit
+          </button>
+        </form>
       </div>
 
       <div className="fixed bottom-0 right-10 -z-10">
