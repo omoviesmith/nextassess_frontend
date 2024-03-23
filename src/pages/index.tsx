@@ -102,7 +102,7 @@ export default function Home() {
         <div className="container mx-auto px-40 mt-5">
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-5">
             <div className="w-[293px]">
-              <Link href="/upload-assessment">
+              <Link href="/ai-generated-assessment-v1">
                 <div className="shadow-md bg-[#CBFFFE] rounded-t-xl">
                   <div className="flex justify-center relative">
                     <div className="flex justify-center w-full">
@@ -186,7 +186,7 @@ export default function Home() {
             </div>
 
             <div className="w-[293px]">
-              <Link href="/describe-assessment">
+              <Link href="/ai-generated-assessment-v2">
                 <div className="shadow-md bg-[#CBFFFE] rounded-t-xl">
                   <div className="flex justify-center w-full">
                     <svg

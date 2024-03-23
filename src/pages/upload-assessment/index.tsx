@@ -25,7 +25,7 @@ export default function UploadAssessment() {
         .post("https://nextassess.onrender.com/upload_assessment", fd, config)
         .then((response) => {
           // Resolve the promise when the upload is successful.
-          resolve(response.data.url);
+          resolve(response.data.assessment_url);
         })
         .catch((error) => {
           // Reject the promise if an error occurs.
@@ -203,6 +203,7 @@ export default function UploadAssessment() {
 
                     uploadFile(fd)
                       .then((url: any) => {
+                        console.log(url);
                         // Handle successful upload here
                         window.location = url;
                       })
